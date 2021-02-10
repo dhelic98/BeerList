@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header/>
     <router-view></router-view>
   </div>
 </template>
@@ -7,11 +8,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import AllBeers from './components/AllBeers.vue'
+import Header from './components/Header.vue'
 import axios from 'axios'
 
 @Component({
   components: {
-    AllBeers
+    AllBeers,
+    Header
   }
 })
 export default class App extends Vue {
@@ -33,6 +36,5 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

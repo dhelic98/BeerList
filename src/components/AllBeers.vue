@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="header">
-
-    </div>
+    <Header/>
     <div class="content">
       <div class="beerDiv" v-for="beer in this.beers" v-bind:key="beer.id" @click="showBeer(beer.id)">
         <div class="beerImg">
@@ -54,7 +52,7 @@ export default class AllBeers extends Vue {
     height: 140px;
     border-radius: 5px;
     margin: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -87,7 +85,6 @@ export default class AllBeers extends Vue {
         }
       }
     }
-
   }
 }
 </style>
