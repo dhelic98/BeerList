@@ -1,20 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from './components/HelloWorld.vue'
+import AllBeers from './components/AllBeers.vue'
+import axios from 'axios'
 
 @Component({
   components: {
-    HelloWorld
+    AllBeers
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  beers = [];
+  created () {
+    axios.get('https://api.punkapi.com/v2/beers').then(response => {
+      if (this.$store.getters.getBeers.length === 0) {
+        this.$store.commit('addBeers', response.data)
+      }
+    })
+  }
+}
 </script>
 
 <style lang="scss">
