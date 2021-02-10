@@ -36,7 +36,6 @@ export default class AllBeers extends Vue {
 
   created () {
     this.beers = this.$store.getters.getBeers
-    console.log(this.beers)
   }
 }
 </script>
