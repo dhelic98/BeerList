@@ -48,8 +48,8 @@ export default class AllBeers extends Vue {
   justify-content: space-between;
   padding: 0 5%;
   .beerDiv {
-    flex:0 0 30%;
-    height: 140px;
+    flex:0 0 ((100%-5%)/3);
+    height: 150px;
     border-radius: 5px;
     margin: 10px;
     margin-bottom: 15px;

@@ -61,7 +61,6 @@ export default class Beer extends Vue {
   @Watch('$route.params.beerID', { immediate: true, deep: true })
   onRouteChanged (val: string) {
     this.beer = this.$store.getters.getBeer(val)
-    console.log(this.beer.ingredients)
   }
 }
 </script>
